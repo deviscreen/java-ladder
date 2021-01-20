@@ -3,6 +3,7 @@ package ladder.domain;
 import ladder.util.RandomPoint;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Line {
@@ -28,7 +29,7 @@ public class Line {
     }
 
     public List<Boolean> resultLine(){
-        return new ArrayList<>(this.line);
+        return Collections.unmodifiableList(this.line);
     }
 
 }
