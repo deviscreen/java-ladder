@@ -17,6 +17,11 @@ public class InputUtil {
         return names;
     }
 
+    public static String inputResult() {
+        String names = input();
+        return names;
+    }
+
     private static String input() {
         return scanner.nextLine().trim();
     }

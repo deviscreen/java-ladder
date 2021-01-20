@@ -1,5 +1,7 @@
 package ladder.util;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 public class StringUtil {
@@ -13,6 +15,13 @@ public class StringUtil {
                 .filter(namesOpt -> namesOpt.length > 1)
                 .orElseThrow(() -> new NullPointerException(NON_INPUT));
         return splitNames;
+    }
+
+    public static List<String> splitResults(String results) {
+        String[] strings = Optional.ofNullable(results)
+                .map((element) -> element.split(delimiter))
+                .orElseThrow(() -> new NullPointerException(NON_INPUT));
+        return Arrays.asList(strings);
     }
 }
 

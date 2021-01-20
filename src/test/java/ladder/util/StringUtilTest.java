@@ -27,4 +27,8 @@ class StringUtilTest {
             StringUtil.splitNames(names);
         });
     }
+
+    @Test
+    void splitResults() {
+    }
 }

@@ -10,10 +10,16 @@ import java.util.stream.Stream;
 public class Ladder {
 
     private List<Name> names;
+
+    private LadderResult ladderResult;
     private List<Line> lines;
 
     public Ladder(String names) {
         this.names = participateNames(names);
+    }
+
+    public Ladder() {
+
     }
 
     protected static List<Name> participateNames(String names) {
@@ -37,5 +43,14 @@ public class Ladder {
 
     public List<Name> participateNames() {
         return Collections.unmodifiableList(this.names);
+    }
+
+    public void setLadderResult(String ladderResults) {
+        LadderResult ladderResult = new LadderResult();
+        ladderResult.setResults(ladderResults);
+        this.ladderResult = ladderResult;
+    }
+    public LadderResult getLadderResults(){
+        return this.ladderResult;
     }
 }
