@@ -14,17 +14,10 @@ public class Ladder {
     private LadderResult ladderResult;
     private List<Line> lines;
 
-    public Ladder(String names) {
-        this.names = participateNames(names);
-    }
 
-    public Ladder() {
-
-    }
-
-    protected static List<Name> participateNames(String names) {
+    public void setParticipateNames(String names) {
         String[] strings = StringUtil.splitNames(names);
-        return Arrays.asList(strings).stream()
+        this.names =Arrays.asList(strings).stream()
                 .map(Name::new)
                 .collect(Collectors.toList());
     }
@@ -37,6 +30,7 @@ public class Ladder {
         this.lines = generatedLine;
         return generatedLine;
     }
+
     public List<Line> resultLadder(){
         return new ArrayList<>(this.lines);
     }
@@ -44,12 +38,12 @@ public class Ladder {
     public List<Name> participateNames() {
         return Collections.unmodifiableList(this.names);
     }
-
     public void setLadderResult(String ladderResults) {
         LadderResult ladderResult = new LadderResult();
         ladderResult.setResults(ladderResults);
         this.ladderResult = ladderResult;
     }
+
     public LadderResult getLadderResults(){
         return this.ladderResult;
     }

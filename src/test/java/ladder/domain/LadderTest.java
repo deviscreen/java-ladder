@@ -15,10 +15,11 @@ class LadderTest {
     @Test
     void ladderParticipateNames() {
         String names = "morr,dani";
-        ladder = new Ladder(names);
+        ladder = new Ladder();
+        ladder.setParticipateNames(names);
         String[] split = names.split(",");
 
-        List<Name> participateNames = ladder.participateNames(names);
+        List<Name> participateNames = ladder.participateNames();
 
         assertThat(participateNames).hasSize(split.length);
 
@@ -28,8 +29,8 @@ class LadderTest {
     void generateLadderLine() {
         String names = "morr,dani,dell";
         int ladderHeight = 4;
-        ladder = new Ladder(names);
-
+        ladder = new Ladder();
+        ladder.setParticipateNames(names);
         List<Line> lines = ladder.generateLadderLine(4);
 
         assertThat(lines).hasSize(ladderHeight);
